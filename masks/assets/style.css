@@ -1,0 +1,246 @@
+* {
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+}
+
+body {
+    background-color: black;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;   /* this is what allows room to scroll */
+    scroll-snap-align: start;
+}
+/* fade animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+/* change color to blue animation */
+@keyframes changeBlue {
+    0% {
+        color: white;
+    }
+    100% {
+        color: blue;
+        font-weight: bolder;
+    }
+}
+
+#blue-skin-text.animate {
+    animation: fadeIn 1.5s ease-in forwards, changeBlue 1s ease-in .5s forwards;
+    font-size: 60px;
+    font-family: 'Delius Unicase', cursive;
+}
+
+#so-did-he-text.animate {
+    animation: fadeIn 1.5s ease-in forwards, changeBlue 1s ease-in .5s forwards;
+    font-size: 60px;
+    font-family: 'Delius Unicase', cursive;
+}
+
+#section-3 {
+    position: relative;
+    display: flex;
+    padding: 5px;
+    margin: 3px;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: blue;
+    animation: noBlue 1s ease-in forwards;
+}
+
+@keyframes flyDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(200px);
+    }
+}
+
+@keyframes flyUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes noBlue {
+    0% {
+        color: blue;
+    }
+    100% {
+        color: whitesmoke;
+        background-color: black;
+    }
+}
+
+#he-hide-text.animate {
+    position: relative;
+    animation: flyDown 2.5s ease-in both, noBlue 1.5s ease-in forwards;
+}
+
+#she-hide-text.animate {
+    position: relative;
+    animation: flyUp 2.5s ease-in both, noBlue 1.5s ease-in forwards;
+}
+
+@keyframes allButBlue {
+    0% {
+        color: white;
+    }
+    10% {
+        color: yellow;
+    }
+    20% {
+        color: orange;
+    }
+    30% {
+        color: red;
+    }
+    45% {
+        color: pink;
+    }
+    70% {
+        color: lightgreen;
+    }
+    85% {
+        color: darkolivegreen;
+    }
+    100% {
+        color: purple;
+    }
+}
+
+#section-4 {
+    background-color: black;
+}
+
+#search-for-blue-text.animate {
+    animation: allButBlue 4.9s ease-in 2 forwards;
+    font-weight: bold; 
+    font-size: 55px;
+}
+
+@keyframes moveAcrossR {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(100px);
+    }
+    50% {
+        transform: translateX(200px); 
+    }
+    75% {
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(400px);
+    }
+}
+
+@keyframes moveAcrossL {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100px);
+    }
+    50% {
+        transform: translateX(-200px); 
+    }
+    75% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(-400px);
+    }
+}
+
+#life-text.animate {
+    color: white;
+    font-size: 50px;
+    animation: moveAcrossR 4s ease-in-out infinite;
+}
+
+
+@keyframes waves {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#pass-by-text.animate {
+    animation: moveAcrossR 3.7s ease-in-out alternate, fadeOut 1.4s ease-in-out forwards 1.9s;
+  }
+  
+  #ending-text.animate {
+    animation: moveAcrossL 3.7s ease-in-out alternate, fadeOut 1.4s ease-in-out forwards 1.9s;
+  }
+
+@keyframes growUp {
+    0% {
+        transform: translateY(100px);
+    }
+    25% {
+        transform: translateY(-100px);
+    }
+    50% {
+        transform: translateY(-350px);
+        transform: scale(1);
+    }
+    100% {
+        transform: translateY(-500px);
+        transform: scale(1.5);
+        
+    }
+}
+
+#masks-text.animate {
+    font-size: 120px;
+    animation: growUp 5s ease-in forwards;
+    animation-fill-mode: forwards;
+}
+
+#section-5 {
+    color: blue;
+    display: grid;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 33px;
+}
+
